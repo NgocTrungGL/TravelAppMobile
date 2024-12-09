@@ -49,36 +49,36 @@ type Props = {
     categories: CategoriesWithProductsResponse;
 };
 
-// const CategoriesPageComponent: FC<Props> = ({ categories }) => {
-//     const [isCreateCategoryModalOpen, setIsCreateCategoryModalOpen] =
-//         useState(false);
-//     const [currentCategory, setCurrentCategory] =
-//         useState<CreateCategorySchema | null>(null);
+const CategoriesPageComponent: FC<Props> = ({ categories }) => {
+    const [isCreateCategoryModalOpen, setIsCreateCategoryModalOpen] =
+        useState(false);
+    const [currentCategory, setCurrentCategory] =
+        useState<CreateCategorySchema | null>(null);
 
-//     const form = useForm<CreateCategorySchema>({
-//         resolver: zodResolver(createCategorySchema),
-//         defaultValues: {
-//             name: "",
-//             image: undefined,
-//         },
-//     });
+    const form = useForm<CreateCategorySchema>({
+        resolver: zodResolver(createCategorySchema),
+        defaultValues: {
+            name: "",
+            image: undefined,
+        },
+    });
 
-//     const router = useRouter();
+    const router = useRouter();
 
-//     const submitCategoryHandler: SubmitHandler<CreateCategorySchema> = async (
-//         data
-//     ) => {
-//         const { image, name, intent = "create" } = data;
+    const submitCategoryHandler: SubmitHandler<CreateCategorySchema> = async (
+        data
+    ) => {
+        const { image, name, intent = "create" } = data;
 
-//         const handleImageUpload = async () => {
-//             const uniqueId = uuid();
-//             const fileName = `category/category-${uniqueId}`;
-//             const file = new File([data.image[0]], fileName);
-//             const formData = new FormData();
-//             formData.append("file", file);
+        const handleImageUpload = async () => {
+            const uniqueId = uuid();
+            const fileName = `category/category-${uniqueId}`;
+            const file = new File([data.image[0]], fileName);
+            const formData = new FormData();
+            formData.append("file", file);
 
-//             return imageUploadHandler(formData);
-//         };
+            return imageUploadHandler(formData);
+        };
 
 //         switch (intent) {
 //             case "create": {
