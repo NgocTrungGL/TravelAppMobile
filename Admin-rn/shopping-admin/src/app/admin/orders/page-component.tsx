@@ -115,44 +115,44 @@ export default function PageComponent({ ordersWithProducts }: Props) {
                                     </SelectTrigger>
                                     <SelectContent>
                                         {statusOptions.map((status) => (
-//                                             <SelectItem
-//                                                 key={status}
-//                                                 value={status}
-//                                             >
-//                                                 {status}
-//                                             </SelectItem>
-//                                         ))}
-//                                     </SelectContent>
-//                                 </Select>
-//                             </TableCell>
-//                             <TableCell>
-//                                 {order.description || "No Description"}
-//                             </TableCell>
-//                             {/* @ts-ignore */}
-//                             <TableCell>{order.user.email}</TableCell>
-//                             <TableCell>{order.slug}</TableCell>
-//                             <TableCell>
-//                                 $ {order.totalPrice.toFixed(2)}
-//                             </TableCell>
-//                             <TableCell>
-//                                 {order.order_items.length} item
-//                                 {order.order_items.length > 1 ? "s" : ""}
-//                             </TableCell>
-//                             <TableCell>
-//                                 <Dialog>
-//                                     <DialogTrigger asChild>
-//                                         <Button
-//                                             variant="outline"
-//                                             size="sm"
-//                                             onClick={openProductsModal(
-//                                                 orderedProducts.filter(
-//                                                     (item) =>
-//                                                         item.order_id ===
-//                                                         order.id
-//                                                 )
-//                                             )}
-//                                         >
-//                                             View Products
+                                            <SelectItem
+                                                key={status}
+                                                value={status}
+                                            >
+                                                {status}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </TableCell>
+                            <TableCell>
+                                {order.description || "No Description"}
+                            </TableCell>
+                            {/* @ts-ignore */}
+                            <TableCell>{order.user.email}</TableCell>
+                            <TableCell>{order.slug}</TableCell>
+                            <TableCell>
+                                $ {order.totalPrice.toFixed(2)}
+                            </TableCell>
+                            <TableCell>
+                                {order.order_items.length} item
+                                {order.order_items.length > 1 ? "s" : ""}
+                            </TableCell>
+                            <TableCell>
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            onClick={openProductsModal(
+                                                orderedProducts.filter(
+                                                    (item) =>
+                                                        item.order_id ===
+                                                        order.id
+                                                )
+                                            )}
+                                        >
+                                            View Products
 //                                         </Button>
 //                                     </DialogTrigger>
 //                                     <DialogContent>
