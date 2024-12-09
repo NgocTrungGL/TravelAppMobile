@@ -39,11 +39,11 @@ const Home = () => {
 
 export default Home;
 
-// const styles = StyleSheet.create({
-//     flatListContent: {
-//         paddingBottom: 20,
-//     },
-//     flatListColumn: {
-//         justifyContent: "space-between",
-//     },
-// });
+const styles = StyleSheet.create({
+    flatListContent: {
+        paddingBottom: 20,
+    },
+    flatListColumn: {
+        justifyContent: "space-between",
+    },
+});
