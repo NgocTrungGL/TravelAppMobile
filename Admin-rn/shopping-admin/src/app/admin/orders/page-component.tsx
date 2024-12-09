@@ -153,60 +153,60 @@ export default function PageComponent({ ordersWithProducts }: Props) {
                                             )}
                                         >
                                             View Products
-//                                         </Button>
-//                                     </DialogTrigger>
-//                                     <DialogContent>
-//                                         <DialogHeader>
-//                                             <DialogTitle>
-//                                                 Order Products
-//                                             </DialogTitle>
-//                                         </DialogHeader>
+                                        </Button>
+                                    </DialogTrigger>
+                                    <DialogContent>
+                                        <DialogHeader>
+                                            <DialogTitle>
+                                                Order Products
+                                            </DialogTitle>
+                                        </DialogHeader>
 
-//                                         <div className="mt-4">
-//                                             {selectedProducts.map(
-//                                                 ({ product }, index) => (
-//                                                     <div
-//                                                         key={index}
-//                                                         className="mr-2 mb-2 flex items-center space-x-2"
-//                                                     >
-//                                                         <Image
-//                                                             className="w-16 h-16 object-cover rounded"
-//                                                             src={
-//                                                                 product.heroImage
-//                                                             }
-//                                                             alt={product.title}
-//                                                             width={64}
-//                                                             height={64}
-//                                                         />
-//                                                         <div className="flex flex-col">
-//                                                             <span className="font-semibold">
-//                                                                 {product.title}
-//                                                             </span>
-//                                                             <span className="text-gray-600">
-//                                                                 ${" "}
-//                                                                 {product.price.toFixed(
-//                                                                     2
-//                                                                 )}
-//                                                             </span>
-//                                                             <span className="text-sm text-gray-500">
-//                                                                 Available
-//                                                                 Quantity:{" "}
-//                                                                 {
-//                                                                     product.maxQuantity
-//                                                                 }
-//                                                             </span>
-//                                                         </div>
-//                                                     </div>
-//                                                 )
-//                                             )}
-//                                         </div>
-//                                     </DialogContent>
-//                                 </Dialog>
-//                             </TableCell>
-//                         </TableRow>
-//                     ))}
-//                 </TableBody>
-//             </Table>
-//         </div>
-//     );
-// }
+                                        <div className="mt-4">
+                                            {selectedProducts.map(
+                                                ({ product }, index) => (
+                                                    <div
+                                                        key={index}
+                                                        className="mr-2 mb-2 flex items-center space-x-2"
+                                                    >
+                                                        <Image
+                                                            className="w-16 h-16 object-cover rounded"
+                                                            src={
+                                                                product.heroImage
+                                                            }
+                                                            alt={product.title}
+                                                            width={64}
+                                                            height={64}
+                                                        />
+                                                        <div className="flex flex-col">
+                                                            <span className="font-semibold">
+                                                                {product.title}
+                                                            </span>
+                                                            <span className="text-gray-600">
+                                                                ${" "}
+                                                                {product.price.toFixed(
+                                                                    2
+                                                                )}
+                                                            </span>
+                                                            <span className="text-sm text-gray-500">
+                                                                Available
+                                                                Quantity:{" "}
+                                                                {
+                                                                    product.maxQuantity
+                                                                }
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            )}
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
+    );
+}
