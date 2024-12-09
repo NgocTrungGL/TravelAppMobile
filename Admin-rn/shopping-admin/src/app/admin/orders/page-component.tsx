@@ -32,34 +32,34 @@ import {
 import { OrdersWithProducts } from "@/app/admin/orders/types";
 import { updateOrderStatus } from "@/actions/orders";
 
-// const statusOptions = ["Pending", "Shipped", "InTransit", "Completed"];
+const statusOptions = ["Pending", "Shipped", "InTransit", "Completed"];
 
-// type Props = {
-//     ordersWithProducts: OrdersWithProducts;
-// };
+type Props = {
+    ordersWithProducts: OrdersWithProducts;
+};
 
-// type OrderedProducts = {
-//     order_id: number;
-//     product: number & {
-//         category: number;
-//         created_at: string;
-//         heroImage: string;
-//         id: number;
-//         imagesUrl: string[];
-//         maxQuantity: number;
-//         price: number;
-//         slug: string;
-//         title: string;
-//     };
-// }[];
+type OrderedProducts = {
+    order_id: number;
+    product: number & {
+        category: number;
+        created_at: string;
+        heroImage: string;
+        id: number;
+        imagesUrl: string[];
+        maxQuantity: number;
+        price: number;
+        slug: string;
+        title: string;
+    };
+}[];
 
-// export default function PageComponent({ ordersWithProducts }: Props) {
-//     const [selectedProducts, setSelectedProducts] = useState<OrderedProducts>(
-//         []
-//     );
+export default function PageComponent({ ordersWithProducts }: Props) {
+    const [selectedProducts, setSelectedProducts] = useState<OrderedProducts>(
+        []
+    );
 
-//     const openProductsModal = (products: OrderedProducts) => () =>
-//         setSelectedProducts(products);
+    const openProductsModal = (products: OrderedProducts) => () =>
+        setSelectedProducts(products);
 
 //     const orderedProducts = ordersWithProducts.flatMap((order) =>
 //         order.order_items.map((item) => ({
