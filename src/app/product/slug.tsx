@@ -70,72 +70,72 @@ const ProductDetails = () => {
 
     const totalPrice = (product.price * quantity).toFixed(2);
 
-//     return (
-//         <View style={styles.container}>
-//             <Stack.Screen options={{ title: product.title }} />
+    return (
+        <View style={styles.container}>
+            <Stack.Screen options={{ title: product.title }} />
 
-//             <Image
-//                 source={{ uri: product.heroImage }}
-//                 style={styles.heroImage}
-//             />
+            <Image
+                source={{ uri: product.heroImage }}
+                style={styles.heroImage}
+            />
 
-//             <View style={{ padding: 16, flex: 1 }}>
-//                 <Text style={styles.title}>Title: {product.title}</Text>
-//                 <Text style={styles.slug}>Slug: {product.slug}</Text>
-//                 <View style={styles.priceContainer}>
-//                     <Text style={styles.price}>
-//                         Unit Price: ${product.price.toFixed(2)}
-//                     </Text>
-//                     <Text style={styles.price}>Total Price: ${totalPrice}</Text>
-//                 </View>
+            <View style={{ padding: 16, flex: 1 }}>
+                <Text style={styles.title}>Title: {product.title}</Text>
+                <Text style={styles.slug}>Slug: {product.slug}</Text>
+                <View style={styles.priceContainer}>
+                    <Text style={styles.price}>
+                        Unit Price: ${product.price.toFixed(2)}
+                    </Text>
+                    <Text style={styles.price}>Total Price: ${totalPrice}</Text>
+                </View>
 
-//                 <FlatList
-//                     data={product.imagesUrl}
-//                     keyExtractor={(item, index) => index.toString()}
-//                     renderItem={({ item }) => (
-//                         <Image source={{ uri: item }} style={styles.image} />
-//                     )}
-//                     horizontal
-//                     showsHorizontalScrollIndicator={false}
-//                     contentContainerStyle={styles.imagesContainer}
-//                 />
+                <FlatList
+                    data={product.imagesUrl}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => (
+                        <Image source={{ uri: item }} style={styles.image} />
+                    )}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.imagesContainer}
+                />
 
-//                 <View style={styles.buttonContainer}>
-//                     <TouchableOpacity
-//                         style={styles.quantityButton}
-//                         onPress={decreaseQuantity}
-//                         disabled={quantity <= 1}
-//                     >
-//                         <Text style={styles.quantityButtonText}>-</Text>
-//                     </TouchableOpacity>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        style={styles.quantityButton}
+                        onPress={decreaseQuantity}
+                        disabled={quantity <= 1}
+                    >
+                        <Text style={styles.quantityButtonText}>-</Text>
+                    </TouchableOpacity>
 
-//                     <Text style={styles.quantity}>{quantity}</Text>
+                    <Text style={styles.quantity}>{quantity}</Text>
 
-//                     <TouchableOpacity
-//                         style={styles.quantityButton}
-//                         onPress={increaseQuantity}
-//                         disabled={quantity >= product.maxQuantity}
-//                     >
-//                         <Text style={styles.quantityButtonText}>+</Text>
-//                     </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.quantityButton}
+                        onPress={increaseQuantity}
+                        disabled={quantity >= product.maxQuantity}
+                    >
+                        <Text style={styles.quantityButtonText}>+</Text>
+                    </TouchableOpacity>
 
-//                     <TouchableOpacity
-//                         style={[
-//                             styles.addToCartButton,
-//                             { opacity: quantity === 0 ? 0.5 : 1 },
-//                         ]}
-//                         onPress={addToCart}
-//                         disabled={quantity === 0}
-//                     >
-//                         <Text style={styles.addToCartText}>Add to Cart</Text>
-//                     </TouchableOpacity>
-//                 </View>
-//             </View>
-//         </View>
-//     );
-// };
+                    <TouchableOpacity
+                        style={[
+                            styles.addToCartButton,
+                            { opacity: quantity === 0 ? 0.5 : 1 },
+                        ]}
+                        onPress={addToCart}
+                        disabled={quantity === 0}
+                    >
+                        <Text style={styles.addToCartText}>Add to Cart</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
+    );
+};
 
-// export default ProductDetails;
+export default ProductDetails;
 
 // const styles = StyleSheet.create({
 //     container: {
