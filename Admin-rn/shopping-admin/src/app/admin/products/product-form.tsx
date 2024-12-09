@@ -37,30 +37,30 @@ type Props = {
     defaultValues: CreateOrUpdateProductSchema | null;
 };
 
-// export const ProductForm = ({
-//     form,
-//     onSubmit,
-//     categories,
-//     setIsProductModalOpen,
-//     isProductModalOpen,
-//     defaultValues,
-// }: Props) => {
-//     const isSubmitting = form.formState.isSubmitting;
+export const ProductForm = ({
+    form,
+    onSubmit,
+    categories,
+    setIsProductModalOpen,
+    isProductModalOpen,
+    defaultValues,
+}: Props) => {
+    const isSubmitting = form.formState.isSubmitting;
 
-//     useEffect(() => {
-//         if (defaultValues) {
-//             form.reset(defaultValues);
-//         } else {
-//             form.reset({
-//                 title: "",
-//                 category: "",
-//                 price: "",
-//                 maxQuantity: "",
-//                 heroImage: undefined,
-//                 images: undefined,
-//             });
-//         }
-//     }, [defaultValues, form]);
+    useEffect(() => {
+        if (defaultValues) {
+            form.reset(defaultValues);
+        } else {
+            form.reset({
+                title: "",
+                category: "",
+                price: "",
+                maxQuantity: "",
+                heroImage: undefined,
+                images: undefined,
+            });
+        }
+    }, [defaultValues, form]);
 
 //     return (
 //         <Dialog open={isProductModalOpen} onOpenChange={setIsProductModalOpen}>
