@@ -14,99 +14,99 @@ import { useCartStore } from "../store/cart-store";
 import { supabase } from "../lib/supabase";
 import { Tables } from "../types/database.types";
 
-// export const ListHeader = ({
-//     categories,
-// }: {
-//     categories: Tables<"category">[];
-// }) => {
-//     const { getItemCount } = useCartStore();
+export const ListHeader = ({
+    categories,
+}: {
+    categories: Tables<"category">[];
+}) => {
+    const { getItemCount } = useCartStore();
 
-//     const handleSignOut = async () => {
-//         await supabase.auth.signOut();
-//     };
+    const handleSignOut = async () => {
+        await supabase.auth.signOut();
+    };
 
-//     return (
-//         <View style={[styles.headerContainer]}>
-//             <View style={styles.headerTop}>
-//                 <View style={styles.headerLeft}>
-//                     <View style={styles.avatarContainer}>
-//                         <Image
-//                             source={{ uri: "https://via.placeholder.com/40" }}
-//                             style={styles.avatarImage}
-//                         />
-//                         <Text style={styles.avatarText}>
-//                             Hello codewithlari
-//                         </Text>
-//                     </View>
-//                 </View>
-//                 <View style={styles.headerRight}>
-//                     <Link style={styles.cartContainer} href="/cart" asChild>
-//                         <Pressable>
-//                             {({ pressed }) => (
-//                                 <View>
-//                                     <FontAwesome
-//                                         name="shopping-cart"
-//                                         size={25}
-//                                         color="gray"
-//                                         style={{
-//                                             marginRight: 15,
-//                                             opacity: pressed ? 0.5 : 1,
-//                                         }}
-//                                     />
+    return (
+        <View style={[styles.headerContainer]}>
+            <View style={styles.headerTop}>
+                <View style={styles.headerLeft}>
+                    <View style={styles.avatarContainer}>
+                        <Image
+                            source={{ uri: "https://via.placeholder.com/40" }}
+                            style={styles.avatarImage}
+                        />
+                        <Text style={styles.avatarText}>
+                            Hello codewithlari
+                        </Text>
+                    </View>
+                </View>
+                <View style={styles.headerRight}>
+                    <Link style={styles.cartContainer} href="/cart" asChild>
+                        <Pressable>
+                            {({ pressed }) => (
+                                <View>
+                                    <FontAwesome
+                                        name="shopping-cart"
+                                        size={25}
+                                        color="gray"
+                                        style={{
+                                            marginRight: 15,
+                                            opacity: pressed ? 0.5 : 1,
+                                        }}
+                                    />
 
-//                                     <View style={styles.badgeContainer}>
-//                                         <Text style={styles.badgeText}>
-//                                             {getItemCount()}
-//                                         </Text>
-//                                     </View>
-//                                 </View>
-//                             )}
-//                         </Pressable>
-//                     </Link>
-//                     <TouchableOpacity
-//                         onPress={handleSignOut}
-//                         style={styles.signOutButton}
-//                     >
-//                         <FontAwesome name="sign-out" size={25} color="red" />
-//                     </TouchableOpacity>
-//                 </View>
-//             </View>
-//             <View style={styles.heroContainer}>
-//                 <Image
-//                     source={require("../../assets/images/hero.png")}
-//                     style={styles.heroImage}
-//                 />
-//             </View>
-//             <View style={styles.categoriesContainer}>
-//                 <Text style={styles.sectionTitle}>Categories</Text>
-//                 <FlatList
-//                     data={categories}
-//                     renderItem={({ item }) => (
-//                         <Link asChild href={`/categories/${item.slug}`}>
-//                             <Pressable style={styles.category}>
-//                                 <Image
-//                                     source={{ uri: item.imageUrl }}
-//                                     style={styles.categoryImage}
-//                                 />
-//                                 <Text style={styles.categoryText}>
-//                                     {item.name}
-//                                 </Text>
-//                             </Pressable>
-//                         </Link>
-//                     )}
-//                     keyExtractor={(item) => item.name}
-//                     horizontal
-//                     showsHorizontalScrollIndicator={false}
-//                 />
-//             </View>
-//         </View>
-//     );
-// };
+                                    <View style={styles.badgeContainer}>
+                                        <Text style={styles.badgeText}>
+                                            {getItemCount()}
+                                        </Text>
+                                    </View>
+                                </View>
+                            )}
+                        </Pressable>
+                    </Link>
+                    <TouchableOpacity
+                        onPress={handleSignOut}
+                        style={styles.signOutButton}
+                    >
+                        <FontAwesome name="sign-out" size={25} color="red" />
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <View style={styles.heroContainer}>
+                <Image
+                    source={require("../../assets/images/hero.png")}
+                    style={styles.heroImage}
+                />
+            </View>
+            <View style={styles.categoriesContainer}>
+                <Text style={styles.sectionTitle}>Categories</Text>
+                <FlatList
+                    data={categories}
+                    renderItem={({ item }) => (
+                        <Link asChild href={`/categories/${item.slug}`}>
+                            <Pressable style={styles.category}>
+                                <Image
+                                    source={{ uri: item.imageUrl }}
+                                    style={styles.categoryImage}
+                                />
+                                <Text style={styles.categoryText}>
+                                    {item.name}
+                                </Text>
+                            </Pressable>
+                        </Link>
+                    )}
+                    keyExtractor={(item) => item.name}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+            </View>
+        </View>
+    );
+};
 
-// const styles = StyleSheet.create({
-//     headerContainer: {
-//         gap: 20,
-//     },
+const styles = StyleSheet.create({
+    headerContainer: {
+        gap: 20,
+    },
 //     headerTop: {
 //         flexDirection: "row",
 //         justifyContent: "space-between",
