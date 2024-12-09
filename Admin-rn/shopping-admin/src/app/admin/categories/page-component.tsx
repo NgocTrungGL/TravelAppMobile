@@ -164,50 +164,50 @@ const CategoriesPageComponent: FC<Props> = ({ categories }) => {
                 </div>
             </div>
 
-//             <Card className="overflow-x-auto">
-//                 <CardHeader>
-//                     <CardTitle>Categories</CardTitle>
-//                 </CardHeader>
+            <Card className="overflow-x-auto">
+                <CardHeader>
+                    <CardTitle>Categories</CardTitle>
+                </CardHeader>
 
-//                 <CardContent>
-//                     <Table className="min-w-[600px]">
-//                         <TableHeader>
-//                             <TableRow>
-//                                 <TableHead className="w-[100px] sm:table-cell">
-//                                     <span className="sr-only">Image</span>
-//                                 </TableHead>
-//                                 <TableHead>Name</TableHead>
-//                                 <TableHead className="md:table-cell">
-//                                     Created at
-//                                 </TableHead>
-//                                 <TableHead className="md:table-cell">
-//                                     Products
-//                                 </TableHead>
-//                                 <TableHead>
-//                                     <span className="sr-only">Actions</span>
-//                                 </TableHead>
-//                             </TableRow>
-//                         </TableHeader>
-//                         <TableBody>
-//                             {categories.map((category) => (
-//                                 <CategoryTableRow
-//                                     key={category.id}
-//                                     category={category}
-//                                     setCurrentCategory={setCurrentCategory}
-//                                     setIsCreateCategoryModalOpen={
-//                                         setIsCreateCategoryModalOpen
-//                                     }
-//                                     deleteCategoryHandler={
-//                                         deleteCategoryHandler
-//                                     }
-//                                 />
-//                             ))}
-//                         </TableBody>
-//                     </Table>
-//                 </CardContent>
-//             </Card>
-//         </main>
-//     );
-// };
+                <CardContent>
+                    <Table className="min-w-[600px]">
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="w-[100px] sm:table-cell">
+                                    <span className="sr-only">Image</span>
+                                </TableHead>
+                                <TableHead>Name</TableHead>
+                                <TableHead className="md:table-cell">
+                                    Created at
+                                </TableHead>
+                                <TableHead className="md:table-cell">
+                                    Products
+                                </TableHead>
+                                <TableHead>
+                                    <span className="sr-only">Actions</span>
+                                </TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {categories.map((category) => (
+                                <CategoryTableRow
+                                    key={category.id}
+                                    category={category}
+                                    setCurrentCategory={setCurrentCategory}
+                                    setIsCreateCategoryModalOpen={
+                                        setIsCreateCategoryModalOpen
+                                    }
+                                    deleteCategoryHandler={
+                                        deleteCategoryHandler
+                                    }
+                                />
+                            ))}
+                        </TableBody>
+                    </Table>
+                </CardContent>
+            </Card>
+        </main>
+    );
+};
 
-// export default CategoriesPageComponent;
+export default CategoriesPageComponent;
