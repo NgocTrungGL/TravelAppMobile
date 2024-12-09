@@ -80,42 +80,42 @@ const CategoriesPageComponent: FC<Props> = ({ categories }) => {
             return imageUploadHandler(formData);
         };
 
-//         switch (intent) {
-//             case "create": {
-//                 const imageUrl = await handleImageUpload();
+        switch (intent) {
+            case "create": {
+                const imageUrl = await handleImageUpload();
 
-//                 if (imageUrl) {
-//                     await createCategory({ imageUrl, name });
-//                     form.reset();
-//                     router.refresh();
-//                     setIsCreateCategoryModalOpen(false);
-//                     toast.success("Category created successfully");
-//                 }
-//                 break;
-//             }
-//             case "update": {
-//                 if (image && currentCategory?.slug) {
-//                     const imageUrl = await handleImageUpload();
+                if (imageUrl) {
+                    await createCategory({ imageUrl, name });
+                    form.reset();
+                    router.refresh();
+                    setIsCreateCategoryModalOpen(false);
+                    toast.success("Category created successfully");
+                }
+                break;
+            }
+            case "update": {
+                if (image && currentCategory?.slug) {
+                    const imageUrl = await handleImageUpload();
 
-//                     if (imageUrl) {
-//                         await updateCategory({
-//                             imageUrl,
-//                             name,
-//                             slug: currentCategory.slug,
-//                             intent: "update",
-//                         });
-//                         form.reset();
-//                         router.refresh();
-//                         setIsCreateCategoryModalOpen(false);
-//                         toast.success("Category updated successfully");
-//                     }
-//                 }
-//             }
+                    if (imageUrl) {
+                        await updateCategory({
+                            imageUrl,
+                            name,
+                            slug: currentCategory.slug,
+                            intent: "update",
+                        });
+                        form.reset();
+                        router.refresh();
+                        setIsCreateCategoryModalOpen(false);
+                        toast.success("Category updated successfully");
+                    }
+                }
+            }
 
-//             default:
-//                 console.error("Invalid intent");
-//         }
-//     };
+            default:
+                console.error("Invalid intent");
+        }
+    };
 
 //     const deleteCategoryHandler = async (id: number) => {
 //         await deleteCategory(id);
