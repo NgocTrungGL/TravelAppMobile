@@ -119,7 +119,7 @@ export const CategoryTableRow = ({
                         "No products linked to this category"
                     )}
                 </TableCell>
-                {/* <TableCell>
+                <TableCell>
                     <DropdownMenu>
                         <DropdownMenuTrigger>
                             <Button size="icon" variant="ghost">
@@ -176,4 +176,4 @@ export const CategoryTableRow = ({
             </Dialog>
         </>
     );
-}; */}
+};
