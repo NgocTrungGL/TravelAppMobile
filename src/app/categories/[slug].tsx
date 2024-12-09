@@ -11,38 +11,38 @@ import { Redirect, Stack, useLocalSearchParams } from "expo-router";
 import { ProductListItem } from "../../components/product-list-item";
 import { getCategoryAndProducts } from "../../api/api";
 
-// const Category = () => {
-//     const { slug } = useLocalSearchParams<{ slug: string }>();
+const Category = () => {
+    const { slug } = useLocalSearchParams<{ slug: string }>();
 
-//     const { data, error, isLoading } = getCategoryAndProducts(slug);
+    const { data, error, isLoading } = getCategoryAndProducts(slug);
 
-//     if (isLoading) return <ActivityIndicator />;
-//     if (error || !data) return <Text>Error: {error?.message}</Text>;
-//     if (!data.category || !data.products) return <Redirect href="/404" />;
+    if (isLoading) return <ActivityIndicator />;
+    if (error || !data) return <Text>Error: {error?.message}</Text>;
+    if (!data.category || !data.products) return <Redirect href="/404" />;
 
-//     const { category, products } = data;
+    const { category, products } = data;
 
-//     return (
-//         <View style={styles.container}>
-//             <Stack.Screen options={{ title: category.name }} />
-//             <Image
-//                 source={{ uri: category.imageUrl }}
-//                 style={styles.categoryImage}
-//             />
-//             <Text style={styles.categoryName}>{category.name}</Text>
-//             <FlatList
-//                 data={products}
-//                 keyExtractor={(item) => item.id.toString()}
-//                 renderItem={({ item }) => <ProductListItem product={item} />}
-//                 numColumns={2}
-//                 columnWrapperStyle={styles.productRow}
-//                 contentContainerStyle={styles.productsList}
-//             />
-//         </View>
-//     );
-// };
+    return (
+        <View style={styles.container}>
+            <Stack.Screen options={{ title: category.name }} />
+            <Image
+                source={{ uri: category.imageUrl }}
+                style={styles.categoryImage}
+            />
+            <Text style={styles.categoryName}>{category.name}</Text>
+            <FlatList
+                data={products}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => <ProductListItem product={item} />}
+                numColumns={2}
+                columnWrapperStyle={styles.productRow}
+                contentContainerStyle={styles.productsList}
+            />
+        </View>
+    );
+};
 
-// export default Category;
+export default Category;
 
 // const styles = StyleSheet.create({
 //     container: {
