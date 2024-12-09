@@ -61,60 +61,60 @@ export default function PageComponent({ ordersWithProducts }: Props) {
     const openProductsModal = (products: OrderedProducts) => () =>
         setSelectedProducts(products);
 
-//     const orderedProducts = ordersWithProducts.flatMap((order) =>
-//         order.order_items.map((item) => ({
-//             order_id: order.id,
-//             product: item.product,
-//         }))
-//     );
+    const orderedProducts = ordersWithProducts.flatMap((order) =>
+        order.order_items.map((item) => ({
+            order_id: order.id,
+            product: item.product,
+        }))
+    );
 
-//     const handleStatusChange = async (orderId: number, status: string) => {
-//         await updateOrderStatus(orderId, status);
-//     };
+    const handleStatusChange = async (orderId: number, status: string) => {
+        await updateOrderStatus(orderId, status);
+    };
 
-//     return (
-//         <div className="container mx-auto p-6">
-//             <h1 className="text-2xl font-bold mb-6">
-//                 Orders Management Dashboard
-//             </h1>
-//             <Table>
-//                 <TableHeader>
-//                     <TableRow>
-//                         <TableHead>ID</TableHead>
-//                         <TableHead>Created At</TableHead>
-//                         <TableHead>Status</TableHead>
-//                         <TableHead>Description</TableHead>
-//                         <TableHead>User</TableHead>
-//                         <TableHead>Slug</TableHead>
-//                         <TableHead>Total Price</TableHead>
-//                         <TableHead>Products</TableHead>
-//                         <TableHead>Actions</TableHead>
-//                     </TableRow>
-//                 </TableHeader>
-//                 <TableBody>
-//                     {ordersWithProducts.map((order) => (
-//                         <TableRow key={order.id}>
-//                             <TableCell>{order.id}</TableCell>
-//                             <TableCell>
-//                                 {format(
-//                                     new Date(order.created_at),
-//                                     "MMM dd, yyyy"
-//                                 )}
-//                             </TableCell>
-//                             <TableCell>
-//                                 <Select
-//                                     onValueChange={(value) =>
-//                                         handleStatusChange(order.id, value)
-//                                     }
-//                                     defaultValue={order.status}
-//                                 >
-//                                     <SelectTrigger className="w-[120px]">
-//                                         <SelectValue>
-//                                             {order.status}
-//                                         </SelectValue>
-//                                     </SelectTrigger>
-//                                     <SelectContent>
-//                                         {statusOptions.map((status) => (
+    return (
+        <div className="container mx-auto p-6">
+            <h1 className="text-2xl font-bold mb-6">
+                Orders Management Dashboard
+            </h1>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>ID</TableHead>
+                        <TableHead>Created At</TableHead>
+                        <TableHead>Status</TableHead>
+                        <TableHead>Description</TableHead>
+                        <TableHead>User</TableHead>
+                        <TableHead>Slug</TableHead>
+                        <TableHead>Total Price</TableHead>
+                        <TableHead>Products</TableHead>
+                        <TableHead>Actions</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {ordersWithProducts.map((order) => (
+                        <TableRow key={order.id}>
+                            <TableCell>{order.id}</TableCell>
+                            <TableCell>
+                                {format(
+                                    new Date(order.created_at),
+                                    "MMM dd, yyyy"
+                                )}
+                            </TableCell>
+                            <TableCell>
+                                <Select
+                                    onValueChange={(value) =>
+                                        handleStatusChange(order.id, value)
+                                    }
+                                    defaultValue={order.status}
+                                >
+                                    <SelectTrigger className="w-[120px]">
+                                        <SelectValue>
+                                            {order.status}
+                                        </SelectValue>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {statusOptions.map((status) => (
 //                                             <SelectItem
 //                                                 key={status}
 //                                                 value={status}
