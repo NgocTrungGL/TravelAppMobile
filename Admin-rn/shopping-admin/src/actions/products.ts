@@ -26,74 +26,74 @@ export const getProductsWithCategories =
         return data || [];
     };
 
-// export const createProduct = async ({
-//     category,
-//     heroImage,
-//     images,
-//     maxQuantity,
-//     price,
-//     title,
-// }: CreateProductSchemaServer) => {
-//     const supabase = await createClient();
-//     const slug = slugify(title, { lower: true });
+export const createProduct = async ({
+    category,
+    heroImage,
+    images,
+    maxQuantity,
+    price,
+    title,
+}: CreateProductSchemaServer) => {
+    const supabase = await createClient();
+    const slug = slugify(title, { lower: true });
 
-//     const { data, error } = await supabase.from("product").insert({
-//         category,
-//         heroImage,
-//         imagesUrl: images,
-//         maxQuantity,
-//         price,
-//         slug,
-//         title,
-//     });
+    const { data, error } = await supabase.from("product").insert({
+        category,
+        heroImage,
+        imagesUrl: images,
+        maxQuantity,
+        price,
+        slug,
+        title,
+    });
 
-//     if (error) {
-//         throw new Error(`Error creating product: ${error.message}`);
-//     }
+    if (error) {
+        throw new Error(`Error creating product: ${error.message}`);
+    }
 
-//     revalidatePath("/admin/products");
+    revalidatePath("/admin/products");
 
-//     return data;
-// };
+    return data;
+};
 
-// export const updateProduct = async ({
-//     category,
-//     heroImage,
-//     imagesUrl,
-//     maxQuantity,
-//     price,
-//     slug,
-//     title,
-// }: UpdateProductSchema) => {
-//     const supabase = await createClient();
-//     const { data, error } = await supabase
-//         .from("product")
-//         .update({
-//             category,
-//             heroImage,
-//             imagesUrl,
-//             maxQuantity,
-//             price,
-//             title,
-//         })
-//         .match({ slug });
+export const updateProduct = async ({
+    category,
+    heroImage,
+    imagesUrl,
+    maxQuantity,
+    price,
+    slug,
+    title,
+}: UpdateProductSchema) => {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+        .from("product")
+        .update({
+            category,
+            heroImage,
+            imagesUrl,
+            maxQuantity,
+            price,
+            title,
+        })
+        .match({ slug });
 
-//     if (error) {
-//         throw new Error(`Error updating product: ${error.message}`);
-//     }
+    if (error) {
+        throw new Error(`Error updating product: ${error.message}`);
+    }
 
-//     revalidatePath("/admin/products");
+    revalidatePath("/admin/products");
 
-//     return data;
-// };
+    return data;
+};
 
-// export const deleteProduct = async (slug: string) => {
-//     const supabase = await createClient();
-//     const { error } = await supabase.from("product").delete().match({ slug });
+export const deleteProduct = async (slug: string) => {
+    const supabase = await createClient();
+    const { error } = await supabase.from("product").delete().match({ slug });
 
-//     if (error) {
-//         throw new Error(`Error deleting product: ${error.message}`);
-//     }
+    if (error) {
+        throw new Error(`Error deleting product: ${error.message}`);
+    }
 
-//     revalidatePath("/admin/products");
-// };
+    revalidatePath("/admin/products");
+};
