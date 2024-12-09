@@ -157,48 +157,48 @@ export type Database = {
                     }
                 ];
             };
-//             users: {
-//                 Row: {
-//                     avatar_url: string;
-//                     created_at: string | null;
-//                     email: string;
-//                     expo_notification_token: string | null;
-//                     id: string;
-//                     stripe_customer_id: string | null;
-//                     type: string | null;
-//                 };
-//                 Insert: {
-//                     avatar_url: string;
-//                     created_at?: string | null;
-//                     email: string;
-//                     expo_notification_token?: string | null;
-//                     id: string;
-//                     stripe_customer_id?: string | null;
-//                     type?: string | null;
-//                 };
-//                 Update: {
-//                     avatar_url?: string;
-//                     created_at?: string | null;
-//                     email?: string;
-//                     expo_notification_token?: string | null;
-//                     id?: string;
-//                     stripe_customer_id?: string | null;
-//                     type?: string | null;
-//                 };
-//                 Relationships: [
-//                     {
-//                         foreignKeyName: "users_id_fkey";
-//                         columns: ["id"];
-//                         isOneToOne: true;
-//                         referencedRelation: "users";
-//                         referencedColumns: ["id"];
-//                     }
-//                 ];
-//             };
-//         };
-//         Views: {
-//             [_ in never]: never;
-//         };
+            users: {
+                Row: {
+                    avatar_url: string;
+                    created_at: string | null;
+                    email: string;
+                    expo_notification_token: string | null;
+                    id: string;
+                    stripe_customer_id: string | null;
+                    type: string | null;
+                };
+                Insert: {
+                    avatar_url: string;
+                    created_at?: string | null;
+                    email: string;
+                    expo_notification_token?: string | null;
+                    id: string;
+                    stripe_customer_id?: string | null;
+                    type?: string | null;
+                };
+                Update: {
+                    avatar_url?: string;
+                    created_at?: string | null;
+                    email?: string;
+                    expo_notification_token?: string | null;
+                    id?: string;
+                    stripe_customer_id?: string | null;
+                    type?: string | null;
+                };
+                Relationships: [
+                    {
+                        foreignKeyName: "users_id_fkey";
+                        columns: ["id"];
+                        isOneToOne: true;
+                        referencedRelation: "users";
+                        referencedColumns: ["id"];
+                    }
+                ];
+            };
+        };
+        Views: {
+            [_ in never]: never;
+        };
 //         Functions: {
 //             decrement_product_quantity: {
 //                 Args: {
