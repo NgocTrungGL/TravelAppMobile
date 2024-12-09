@@ -12,66 +12,66 @@ import { ORDERS } from "../../../../assets/orders";
 import { getMyOrder } from "../../../api/api";
 import { format } from "date-fns";
 
-// const OrderDetails = () => {
-//     const { slug } = useLocalSearchParams<{ slug: string }>();
+const OrderDetails = () => {
+    const { slug } = useLocalSearchParams<{ slug: string }>();
 
-//     const { data: order, error, isLoading } = getMyOrder(slug);
+    const { data: order, error, isLoading } = getMyOrder(slug);
 
-//     if (isLoading) return <ActivityIndicator />;
+    if (isLoading) return <ActivityIndicator />;
 
-//     if (error || !order) return <Text>Error: {error?.message}</Text>;
+    if (error || !order) return <Text>Error: {error?.message}</Text>;
 
-//     const orderItems = order.order_items.map((orderItem: any) => {
-//         return {
-//             id: orderItem.id,
-//             title: orderItem.products.title,
-//             heroImage: orderItem.products.heroImage,
-//             price: orderItem.products.price,
-//             quantity: orderItem.quantity,
-//         };
-//     });
+    const orderItems = order.order_items.map((orderItem: any) => {
+        return {
+            id: orderItem.id,
+            title: orderItem.products.title,
+            heroImage: orderItem.products.heroImage,
+            price: orderItem.products.price,
+            quantity: orderItem.quantity,
+        };
+    });
 
-//     return (
-//         <View style={styles.container}>
-//             <Stack.Screen options={{ title: `${order.slug}` }} />
+    return (
+        <View style={styles.container}>
+            <Stack.Screen options={{ title: `${order.slug}` }} />
 
-//             <Text style={styles.item}>{order.slug}</Text>
-//             <Text style={styles.details}>{order.description}</Text>
-//             <View
-//                 style={[
-//                     styles.statusBadge,
-//                     styles[`statusBadge_${order.status}`],
-//                 ]}
-//             >
-//                 <Text style={styles.statusText}>{order.status}</Text>
-//             </View>
-//             <Text style={styles.date}>
-//                 {format(new Date(order.created_at), "MMM dd, yyyy")}
-//             </Text>
-//             <Text style={styles.itemsTitle}>Items Ordered:</Text>
-//             <FlatList
-//                 data={orderItems}
-//                 keyExtractor={(item) => item.id.toString()}
-//                 renderItem={({ item }) => (
-//                     <View style={styles.orderItem}>
-//                         <Image
-//                             source={{ uri: item.heroImage }}
-//                             style={styles.heroImage}
-//                         />
-//                         <View style={styles.itemInfo}>
-//                             <Text style={styles.itemName}>{item.title}</Text>
-//                             <Text style={styles.itemPrice}>
-//                                 Price: ${item.price}
-//                             </Text>
-//                         </View>
-//                     </View>
-//                 )}
-//             />
-//         </View>
-//     );
-// };
+            <Text style={styles.item}>{order.slug}</Text>
+            <Text style={styles.details}>{order.description}</Text>
+            <View
+                style={[
+                    styles.statusBadge,
+                    styles[`statusBadge_${order.status}`],
+                ]}
+            >
+                <Text style={styles.statusText}>{order.status}</Text>
+            </View>
+            <Text style={styles.date}>
+                {format(new Date(order.created_at), "MMM dd, yyyy")}
+            </Text>
+            <Text style={styles.itemsTitle}>Items Ordered:</Text>
+            <FlatList
+                data={orderItems}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <View style={styles.orderItem}>
+                        <Image
+                            source={{ uri: item.heroImage }}
+                            style={styles.heroImage}
+                        />
+                        <View style={styles.itemInfo}>
+                            <Text style={styles.itemName}>{item.title}</Text>
+                            <Text style={styles.itemPrice}>
+                                Price: ${item.price}
+                            </Text>
+                        </View>
+                    </View>
+                )}
+            />
+        </View>
+    );
+};
 
-// export default OrderDetails;
+export default OrderDetails;
 
 // const styles: { [key: string]: any } = StyleSheet.create({
 //     container: {
